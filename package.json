@@ -1,6 +1,6 @@
 {
   "name": "vue-naira-input",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Vue.js component that displays a clock",
   "main": "dist/vue-naira-input.ssr.js",
   "module": "dist/vue-naira-input.esm.js",
@@ -17,6 +17,12 @@
   },
   "author": "Uk Chukundah",
   "license": "MIT",
+  "keywords": [
+    "vue",
+    "currency",
+    "input",
+    "naira"
+  ],
   "dependencies": {
     "text-mask-addons": "^3.8.0",
     "vue-text-mask": "^6.1.2"
