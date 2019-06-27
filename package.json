@@ -1,7 +1,7 @@
 {
   "name": "vue-naira-input",
-  "version": "1.0.1",
-  "description": "A Vue.js component that displays a clock",
+  "version": "1.0.2",
+  "description": "A Vue component for inputting Naira-formatted amounts.",
   "main": "dist/vue-naira-input.ssr.js",
   "module": "dist/vue-naira-input.esm.js",
   "unpkg": "dist/vue-naira-input.min.js",
