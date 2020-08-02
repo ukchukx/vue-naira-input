@@ -15,18 +15,23 @@ export default {
     initialAmount: {
       type: Number,
       default: () => 0
+    },
+    currencySymbol: {
+      type: String,
+      default: () => '₦'
     }
   },
   data() {
 
     return {
-      nairaMask: createNumberMask({ prefix: '₦', allowDecimal: true }),
+      nairaMask: createNumberMask({ prefix: this.currencySymbol, allowDecimal: true }),
       amount: `${this.initialAmount}`
     };
   },
   watch: {
     amount(str) {
-      const amount = str.length ? parseFloat(str.replace(/[₦,]/g, '')) : 0;
+      const regex = new RegExp(`[${this.currencySymbol},]`, 'g');
+      const amount = str.length ? parseFloat(str.replace(regex, '')) : 0;
       this.$emit('input', amount);
     }
   },

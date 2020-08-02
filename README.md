@@ -32,10 +32,16 @@ Once installed, it can be used in a template as simply as:
 <naira-input ref="nairaInput" :initial-amount="initialAmount" v-model="amount" />
 ```
 
-Or to style as a Bootstrap input:
+Or styled as a Bootstrap input:
 
 ```html
 <naira-input class="form-control" ref="nairaInput" :initial-amount="initialAmount" v-model="amount" />
+```
+
+The currency prefix can be changed:
+
+```html
+<naira-input ref="nairaInput" currency-symbol="$" :initial-amount="initialAmount" v-model="amount" />
 ```
 
 To clear the input, call:
