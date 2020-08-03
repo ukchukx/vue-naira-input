@@ -36,6 +36,9 @@ export default {
     }
   },
   methods: {
+    reset() {
+      this.amount = this.initialAmount ? `${this.initialAmount}` : '';
+    },
     clear() {
       this.amount = '';
     }

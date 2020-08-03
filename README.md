@@ -48,3 +48,8 @@ To clear the input, call:
 ```js
 this.$refs.nairaInput.clear();
 ```
+
+To reset the input to the initial value, call:
+```js
+this.$refs.nairaInput.reset();
+```
