@@ -9,22 +9,30 @@ var script = {
     initialAmount: {
       type: Number,
       default: function () { return 0; }
+    },
+    currencySymbol: {
+      type: String,
+      default: function () { return '₦'; }
     }
   },
   data: function data() {
 
     return {
-      nairaMask: createNumberMask({ prefix: '₦', allowDecimal: true }),
+      nairaMask: createNumberMask({ prefix: this.currencySymbol, allowDecimal: true }),
       amount: ("" + (this.initialAmount))
     };
   },
   watch: {
     amount: function amount(str) {
-      var amount = str.length ? parseFloat(str.replace(/[₦,]/g, '')) : 0;
+      var regex = new RegExp(("[" + (this.currencySymbol) + ",]"), 'g');
+      var amount = str.length ? parseFloat(str.replace(regex, '')) : 0;
       this.$emit('input', amount);
     }
   },
   methods: {
+    reset: function reset() {
+      this.amount = this.initialAmount ? ("" + (this.initialAmount)) : '';
+    },
     clear: function clear() {
       this.amount = '';
     }
@@ -124,7 +132,7 @@ var __vue_staticRenderFns__ = [];
   /* scoped */
   var __vue_scope_id__ = undefined;
   /* module identifier */
-  var __vue_module_identifier__ = "data-v-61ce7da4";
+  var __vue_module_identifier__ = "data-v-56dd86e9";
   /* functional template */
   var __vue_is_functional_template__ = false;
   /* style inject */
